@@ -12,13 +12,14 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import sqlite3
 from io import BytesIO
+from maindash import create_dash_application
  
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///manager.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-
+create_dash_application(app)
 
 
 
